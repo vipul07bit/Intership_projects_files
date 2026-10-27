@@ -1,0 +1,9 @@
+flowchart TD
+    A[Customer / Admin UI] -->|HTTPS request| B[Application / API Layer]
+    B --> C[Authentication and Authorization]
+    C --> D[Input Validation and Business Rules]
+    D --> E[Parameterized SQL and Transaction Management]
+    E --> F[(PostgreSQL Database)]
+    F --> G[Constraints, Indexes, and Relational Tables]
+    F --> H[Backup and Recovery Process]
+    F --> I[Monitoring and Query Performance Review]

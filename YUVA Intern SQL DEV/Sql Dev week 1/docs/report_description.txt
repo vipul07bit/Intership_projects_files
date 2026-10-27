@@ -1,0 +1,11 @@
+This report presents a relational database design for a Virtual Retail Environment as part of the SQL Developer Intern task. The main objective is to understand retail business requirements and translate them into a structured, reliable, and scalable database model.
+
+The report covers the essential operations of an online retail business, including customer management, product catalog management, supplier relationships, inventory tracking, order processing, payment records, and shipment tracking. It identifies the major database entities and explains how they are connected through relationships. Primary keys and foreign keys are used to uniquely identify records and maintain referential integrity between related tables.
+
+The report also explains the relational schema design, including important columns, suggested data types, and constraints. Normalization principles, particularly First Normal Form (1NF), Second Normal Form (2NF), and Third Normal Form (3NF), are discussed to demonstrate how data duplication can be reduced and data consistency improved. The design also considers the use of appropriate indexes to support common database queries and improve retrieval performance.
+
+Furthermore, the report presents a proposed database architecture showing how the user interface, application layer, and relational database can work together. It discusses important aspects of database security, transaction management, backup and recovery, and scalability. Examples of retail workflows explain how the proposed model can support product management, order placement, inventory updates, payment tracking, and business reporting.
+
+A validation plan is included to identify tests for database constraints, relationships, inventory rules, and query performance. The report concludes by explaining the design decisions, current limitations, and possible future improvements.
+
+Overall, this project demonstrates the application of relational database concepts to a practical business scenario and provides a foundation for further implementation using SQL and PostgreSQL. The proposed design can be extended as business requirements grow, making it a useful starting point for developing a retail database system.

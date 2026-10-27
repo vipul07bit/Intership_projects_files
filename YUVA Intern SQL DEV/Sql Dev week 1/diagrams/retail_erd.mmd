@@ -1,0 +1,72 @@
+erDiagram
+    CUSTOMERS ||--o{ ORDERS : places
+    CATEGORIES o|--o{ PRODUCTS : classifies
+    ORDERS ||--|{ ORDER_ITEMS : contains
+    PRODUCTS ||--o{ ORDER_ITEMS : appears_in
+    PRODUCTS ||--o{ PRODUCT_SUPPLIERS : sourced_through
+    SUPPLIERS ||--o{ PRODUCT_SUPPLIERS : supplies
+    PRODUCTS ||--o{ INVENTORY : stocked_as
+    WAREHOUSES ||--o{ INVENTORY : holds
+    ORDERS ||--o{ PAYMENTS : has
+    ORDERS ||--o{ SHIPMENTS : ships_as
+
+    CUSTOMERS {
+        bigint customer_id PK
+        varchar full_name
+        varchar email UK
+    }
+    CATEGORIES {
+        bigint category_id PK
+        varchar category_name UK
+    }
+    PRODUCTS {
+        bigint product_id PK
+        bigint category_id FK
+        varchar sku UK
+        varchar product_name
+        numeric current_price
+    }
+    SUPPLIERS {
+        bigint supplier_id PK
+        varchar supplier_name
+    }
+    PRODUCT_SUPPLIERS {
+        bigint product_id PK, FK
+        bigint supplier_id PK, FK
+        numeric supply_cost
+    }
+    WAREHOUSES {
+        bigint warehouse_id PK
+        varchar warehouse_name UK
+    }
+    INVENTORY {
+        bigint product_id PK, FK
+        bigint warehouse_id PK, FK
+        integer quantity_on_hand
+        integer reorder_level
+    }
+    ORDERS {
+        bigint order_id PK
+        bigint customer_id FK
+        timestamptz order_date
+        varchar order_status
+    }
+    ORDER_ITEMS {
+        bigint order_item_id PK
+        bigint order_id FK
+        bigint product_id FK
+        integer quantity
+        numeric unit_price
+    }
+    PAYMENTS {
+        bigint payment_id PK
+        bigint order_id FK
+        numeric amount
+        varchar payment_status
+    }
+    SHIPMENTS {
+        bigint shipment_id PK
+        bigint order_id FK
+        varchar tracking_number UK
+        varchar shipment_status
+    }
