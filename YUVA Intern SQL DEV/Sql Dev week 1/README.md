@@ -93,6 +93,3 @@ The `.mmd` files use Mermaid syntax. View them in a Mermaid-compatible Markdown 
 4. Compare query plans with `EXPLAIN ANALYZE` on a representative dataset.
 5. Add screenshots of successful schema creation and validation to the report if the evaluator expects evidence.
 
-## Author
-
-Replace this section with your name, internship name, and project date before publishing.
