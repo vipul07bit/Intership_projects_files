@@ -1,0 +1,6 @@
+sku,warehouse_name,quantity_on_hand,updated_at
+SKU-1001,Mumbai Central,45,2026-10-09 08:00:00
+SKU-1002,Mumbai Central,18,2026-10-09 08:00:00
+SKU-2001,Navi Mumbai,12,2026-10-09 08:00:00
+SKU-4001,Mumbai Central,7,2026-10-09 08:00:00
+SKU-9999,Mumbai Central,5,2026-10-09 08:00:00

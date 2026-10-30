@@ -1,0 +1,10 @@
+flowchart LR
+ A[Retail sources<br/>CSV / Website / ERP / API] --> B[Extract<br/>Scheduled batch or CDC]
+ B --> C[Raw staging<br/>Preserve source values + batch ID]
+ C --> D[Transform<br/>Normalize, type-cast, deduplicate]
+ D --> E{Quality checks pass?}
+ E -- Yes --> F[Load PostgreSQL<br/>Week 1 retail schema]
+ E -- No --> G[Reject log / quarantine<br/>Reason + raw record]
+ F --> H[Reconcile counts and totals]
+ G --> H
+ H --> I[Batch audit and monitoring]

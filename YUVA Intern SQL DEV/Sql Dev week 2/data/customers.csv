@@ -1,0 +1,9 @@
+source_customer_id,full_name,email,phone,created_at
+C001,  Asha Mehta ,ASHA.MEHTA@MAIL.COM,9876500001,2026-10-01 09:15:00
+C002,Rohan Shah,rohan.shah@mail.com,,2026-10-02 10:30:00
+C003,Neha Rao,neha.rao@mail.com,9876500003,2026-10-03 11:00:00
+C004,Asha Mehta,asha.mehta@mail.com,9876500001,2026-10-01 09:15:00
+C005,Kabir Das,kabir.das@mail.com,9876500005,2026-10-04 12:45:00
+C006,Mira Iyer,mira.iyer@mail.com,9876500006,2026-10-05 14:20:00
+C007,Dev Nair,dev.nair@mail.com,9876500007,2026-10-06 15:10:00
+C008,Sara Khan,sara.khan@mail.com,9876500008,2026-10-07 16:00:00

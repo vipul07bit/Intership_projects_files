@@ -1,0 +1,7 @@
+source_product_id,sku,product_name,category_name,current_price,is_active
+P001,SKU-1001,Wireless Mouse,Accessories,799.00,true
+P002,SKU-1002,USB-C Hub,Accessories,1499,true
+P003,SKU-2001,Mechanical Keyboard,Electronics,3499.00,true
+P004,SKU-3001,Laptop Stand,Accessories,-250.00,true
+P005,SKU-1001,Wireless Mouse - duplicate,Accessories,799.00,true
+P006,SKU-4001,Monitor 24 inch,Electronics,8999.00,true
