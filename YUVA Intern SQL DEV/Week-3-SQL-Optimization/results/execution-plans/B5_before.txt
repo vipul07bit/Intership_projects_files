@@ -1,0 +1,21 @@
+-- B5 before
+Sort  (cost=647.95..656.28 rows=3333 width=28) (actual time=2.441..2.501 rows=840 loops=1)
+  Sort Key: i.quantity_on_hand
+  Sort Method: quicksort  Memory: 70kB
+  Buffers: shared hit=160
+  ->  Hash Join  (cost=230.66..452.92 rows=3333 width=28) (actual time=0.626..2.280 rows=840 loops=1)
+        Hash Cond: (p.product_id = i.product_id)
+        Buffers: shared hit=160
+        ->  Seq Scan on products p  (cost=0.00..196.00 rows=10000 width=20) (actual time=0.002..0.718 rows=10000 loops=1)
+              Buffers: shared hit=96
+        ->  Hash  (cost=189.00..189.00 rows=3333 width=16) (actual time=0.618..0.618 rows=840 loops=1)
+              Buckets: 4096  Batches: 1  Memory Usage: 72kB
+              Buffers: shared hit=64
+              ->  Seq Scan on inventory i  (cost=0.00..189.00 rows=3333 width=16) (actual time=0.004..0.513 rows=840 loops=1)
+                    Filter: (quantity_on_hand <= reorder_level)
+                    Rows Removed by Filter: 9160
+                    Buffers: shared hit=64
+Planning:
+  Buffers: shared hit=12
+Planning Time: 0.109 ms
+Execution Time: 2.549 ms

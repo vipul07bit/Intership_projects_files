@@ -1,0 +1,13 @@
+-- B2 before
+Limit  (cost=282.11..282.36 rows=100 width=26) (actual time=1.040..1.053 rows=100 loops=1)
+  Buffers: shared hit=96
+  ->  Sort  (cost=282.11..286.11 rows=1599 width=26) (actual time=1.040..1.045 rows=100 loops=1)
+        Sort Key: product_name
+        Sort Method: top-N heapsort  Memory: 35kB
+        Buffers: shared hit=96
+        ->  Seq Scan on products  (cost=0.00..221.00 rows=1599 width=26) (actual time=0.004..0.724 rows=1600 loops=1)
+              Filter: (is_active AND ((category)::text = 'Electronics'::text))
+              Rows Removed by Filter: 8400
+              Buffers: shared hit=96
+Planning Time: 0.029 ms
+Execution Time: 1.063 ms

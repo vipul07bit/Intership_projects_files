@@ -1,0 +1,15 @@
+-- B4 after
+Limit  (cost=0.71..28.44 rows=4 width=70) (actual time=0.032..0.041 rows=4 loops=1)
+  Buffers: shared hit=10
+  ->  Nested Loop  (cost=0.71..28.44 rows=4 width=70) (actual time=0.031..0.039 rows=4 loops=1)
+        Buffers: shared hit=10
+        ->  Index Scan using idx_orders_customer_date on orders o  (cost=0.42..20.08 rows=4 width=33) (actual time=0.019..0.022 rows=4 loops=1)
+              Index Cond: (customer_id = 23456)
+              Buffers: shared hit=7
+        ->  Materialize  (cost=0.29..8.31 rows=1 width=53) (actual time=0.003..0.003 rows=1 loops=4)
+              Buffers: shared hit=3
+              ->  Index Scan using customers_pkey on customers c  (cost=0.29..8.31 rows=1 width=53) (actual time=0.007..0.008 rows=1 loops=1)
+                    Index Cond: (customer_id = 23456)
+                    Buffers: shared hit=3
+Planning Time: 0.107 ms
+Execution Time: 0.064 ms

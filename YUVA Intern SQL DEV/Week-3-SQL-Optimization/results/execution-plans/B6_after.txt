@@ -1,0 +1,7 @@
+-- B6 after
+Seq Scan on orders  (cost=0.00..4809.00 rows=53633 width=23) (actual time=0.044..23.146 rows=53710 loops=1)
+  Filter: ((order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+  Rows Removed by Filter: 146290
+  Buffers: shared hit=1809
+Planning Time: 0.091 ms
+Execution Time: 26.420 ms

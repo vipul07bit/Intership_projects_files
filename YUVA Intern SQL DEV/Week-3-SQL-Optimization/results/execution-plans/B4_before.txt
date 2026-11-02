@@ -1,0 +1,23 @@
+-- B4 before
+Limit  (cost=4296.24..4296.47 rows=2 width=70) (actual time=9.620..11.714 rows=4 loops=1)
+  Buffers: shared hit=1832
+  ->  Gather Merge  (cost=4296.24..4296.47 rows=2 width=70) (actual time=9.618..11.711 rows=4 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=1832
+        ->  Sort  (cost=3296.23..3296.24 rows=2 width=70) (actual time=7.744..7.746 rows=2 loops=2)
+              Sort Key: o.order_date DESC
+              Sort Method: quicksort  Memory: 25kB
+              Buffers: shared hit=1832
+              Worker 0:  Sort Method: quicksort  Memory: 25kB
+              ->  Nested Loop  (cost=0.29..3296.22 rows=2 width=70) (actual time=1.662..7.721 rows=2 loops=2)
+                    Buffers: shared hit=1825
+                    ->  Parallel Seq Scan on orders o  (cost=0.00..3279.59 rows=2 width=33) (actual time=1.633..7.675 rows=2 loops=2)
+                          Filter: (customer_id = 23456)
+                          Rows Removed by Filter: 99998
+                          Buffers: shared hit=1809
+                    ->  Index Scan using customers_pkey on customers c  (cost=0.29..8.31 rows=1 width=53) (actual time=0.017..0.018 rows=1 loops=4)
+                          Index Cond: (customer_id = 23456)
+                          Buffers: shared hit=16
+Planning Time: 0.138 ms
+Execution Time: 11.740 ms

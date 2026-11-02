@@ -1,0 +1,19 @@
+flowchart TD
+    A[Start: Retail query requirement] --> B[Define business rule and expected result]
+    B --> C[Prepare representative dataset]
+    C --> D[Run baseline SQL query]
+    D --> E[EXPLAIN ANALYZE + BUFFERS]
+    E --> F[Identify bottleneck: scan, join, sort, filter, I/O]
+    F --> G{Choose evidence-based change}
+    G --> H[Create suitable index]
+    G --> I[Rewrite non-sargable or over-wide query]
+    G --> J[Evaluate partitioning for large time-based tables]
+    H --> K[ANALYZE and rerun same query]
+    I --> K
+    J --> K
+    K --> L[Capture execution plan and median runtime]
+    L --> M{Correct result and measurable benefit?}
+    M -- No --> N[Review plan, remove/revise change]
+    N --> F
+    M -- Yes --> O[Document before/after metrics and trade-offs]
+    O --> P[Recommendations and final report]

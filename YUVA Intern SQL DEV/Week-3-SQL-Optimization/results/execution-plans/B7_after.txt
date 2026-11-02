@@ -1,0 +1,14 @@
+-- B7 after
+GroupAggregate  (cost=1294.05..1561.05 rows=10680 width=48) (actual time=3.914..5.844 rows=9 loops=1)
+  Group Key: (date_trunc('month'::text, order_date))
+  Buffers: shared hit=85
+  ->  Sort  (cost=1294.05..1320.75 rows=10680 width=15) (actual time=3.659..4.170 rows=10577 loops=1)
+        Sort Key: (date_trunc('month'::text, order_date))
+        Sort Method: quicksort  Memory: 839kB
+        Buffers: shared hit=85
+        ->  Index Only Scan using idx_orders_status_date on orders  (cost=0.42..579.42 rows=10680 width=15) (actual time=0.021..2.395 rows=10577 loops=1)
+              Index Cond: ((order_status = 'DELIVERED'::text) AND (order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+              Heap Fetches: 0
+              Buffers: shared hit=85
+Planning Time: 0.085 ms
+Execution Time: 5.865 ms

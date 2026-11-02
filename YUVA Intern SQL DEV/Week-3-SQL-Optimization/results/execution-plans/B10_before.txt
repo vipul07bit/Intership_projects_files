@@ -1,0 +1,12 @@
+-- B10 before
+Bitmap Heap Scan on orders  (cost=1163.03..3789.52 rows=54499 width=32) (actual time=4.870..19.309 rows=53710 loops=1)
+  Recheck Cond: ((order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+  Heap Blocks: exact=1808
+  Buffers: shared hit=1958
+  ->  Bitmap Index Scan on idx_orders_order_date_ctrl  (cost=0.00..1149.41 rows=54499 width=0) (actual time=4.587..4.587 rows=53710 loops=1)
+        Index Cond: ((order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+        Buffers: shared hit=150
+Planning:
+  Buffers: shared hit=4
+Planning Time: 0.182 ms
+Execution Time: 22.645 ms

@@ -1,0 +1,14 @@
+-- B3 after
+Sort  (cost=3159.12..3185.82 rows=10680 width=31) (actual time=10.488..11.970 rows=10577 loops=1)
+  Sort Key: order_date DESC
+  Sort Method: quicksort  Memory: 1004kB
+  Buffers: shared hit=1891
+  ->  Bitmap Heap Scan on orders  (cost=448.59..2444.49 rows=10680 width=31) (actual time=1.890..6.851 rows=10577 loops=1)
+        Recheck Cond: (((order_status)::text = 'DELIVERED'::text) AND (order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+        Heap Blocks: exact=1807
+        Buffers: shared hit=1891
+        ->  Bitmap Index Scan on idx_orders_status_date  (cost=0.00..445.92 rows=10680 width=0) (actual time=1.609..1.609 rows=10577 loops=1)
+              Index Cond: (((order_status)::text = 'DELIVERED'::text) AND (order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone))
+              Buffers: shared hit=84
+Planning Time: 0.145 ms
+Execution Time: 12.612 ms

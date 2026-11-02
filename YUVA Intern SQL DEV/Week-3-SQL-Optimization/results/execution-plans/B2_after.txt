@@ -1,0 +1,8 @@
+-- B2 after
+Limit  (cost=0.29..28.20 rows=100 width=26) (actual time=0.006..0.042 rows=100 loops=1)
+  Buffers: shared hit=28
+  ->  Index Scan using idx_products_category_active_name on products  (cost=0.29..446.57 rows=1599 width=26) (actual time=0.006..0.033 rows=100 loops=1)
+        Index Cond: (((category)::text = 'Electronics'::text) AND (is_active = true))
+        Buffers: shared hit=28
+Planning Time: 0.031 ms
+Execution Time: 0.052 ms

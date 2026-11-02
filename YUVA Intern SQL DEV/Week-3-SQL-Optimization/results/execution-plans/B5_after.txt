@@ -1,0 +1,23 @@
+-- B5 after
+Sort  (cost=593.92..602.25 rows=3333 width=28) (actual time=2.284..2.333 rows=840 loops=1)
+  Sort Key: i.quantity_on_hand
+  Sort Method: quicksort  Memory: 70kB
+  Buffers: shared hit=165
+  ->  Hash Join  (cost=176.63..398.89 rows=3333 width=28) (actual time=0.357..2.111 rows=840 loops=1)
+        Hash Cond: (p.product_id = i.product_id)
+        Buffers: shared hit=165
+        ->  Seq Scan on products p  (cost=0.00..196.00 rows=10000 width=20) (actual time=0.002..0.690 rows=10000 loops=1)
+              Buffers: shared hit=96
+        ->  Hash  (cost=134.97..134.97 rows=3333 width=16) (actual time=0.346..0.347 rows=840 loops=1)
+              Buckets: 4096  Batches: 1  Memory Usage: 72kB
+              Buffers: shared hit=69
+              ->  Bitmap Heap Scan on inventory i  (cost=29.31..134.97 rows=3333 width=16) (actual time=0.067..0.244 rows=840 loops=1)
+                    Recheck Cond: (quantity_on_hand <= reorder_level)
+                    Heap Blocks: exact=64
+                    Buffers: shared hit=69
+                    ->  Bitmap Index Scan on idx_inventory_low_stock  (cost=0.00..28.47 rows=3333 width=0) (actual time=0.053..0.053 rows=840 loops=1)
+                          Buffers: shared hit=5
+Planning:
+  Buffers: shared hit=12
+Planning Time: 0.203 ms
+Execution Time: 2.392 ms

@@ -1,0 +1,14 @@
+-- B7 before
+GroupAggregate  (cost=6037.32..6300.07 rows=10510 width=48) (actual time=18.420..21.064 rows=9 loops=1)
+  Group Key: (date_trunc('month'::text, order_date))
+  Buffers: shared hit=1809
+  ->  Sort  (cost=6037.32..6063.59 rows=10510 width=15) (actual time=18.084..18.920 rows=10577 loops=1)
+        Sort Key: (date_trunc('month'::text, order_date))
+        Sort Method: quicksort  Memory: 839kB
+        Buffers: shared hit=1809
+        ->  Seq Scan on orders  (cost=0.00..5335.27 rows=10510 width=15) (actual time=0.010..16.281 rows=10577 loops=1)
+              Filter: ((order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone) AND ((order_status)::text = 'DELIVERED'::text))
+              Rows Removed by Filter: 189423
+              Buffers: shared hit=1809
+Planning Time: 0.182 ms
+Execution Time: 21.097 ms

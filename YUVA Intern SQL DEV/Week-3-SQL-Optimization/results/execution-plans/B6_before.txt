@@ -1,0 +1,11 @@
+-- B6 before
+Gather  (cost=1000.00..4673.71 rows=1000 width=23) (actual time=0.173..21.201 rows=53710 loops=1)
+  Workers Planned: 1
+  Workers Launched: 1
+  Buffers: shared hit=1809
+  ->  Parallel Seq Scan on orders  (cost=0.00..3573.71 rows=588 width=23) (actual time=0.013..13.928 rows=26855 loops=2)
+        Filter: (date_part('year'::text, order_date) = '2026'::double precision)
+        Rows Removed by Filter: 73145
+        Buffers: shared hit=1809
+Planning Time: 0.078 ms
+Execution Time: 23.700 ms

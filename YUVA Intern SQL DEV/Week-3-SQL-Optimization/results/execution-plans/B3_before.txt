@@ -1,0 +1,16 @@
+-- B3 before
+Gather Merge  (cost=5257.11..5968.04 rows=6182 width=31) (actual time=16.506..22.103 rows=10577 loops=1)
+  Workers Planned: 1
+  Workers Launched: 1
+  Buffers: shared hit=1845
+  ->  Sort  (cost=4257.10..4272.55 rows=6182 width=31) (actual time=14.190..14.909 rows=5288 loops=2)
+        Sort Key: order_date DESC
+        Sort Method: quicksort  Memory: 572kB
+        Buffers: shared hit=1845
+        Worker 0:  Sort Method: quicksort  Memory: 433kB
+        ->  Parallel Seq Scan on orders  (cost=0.00..3867.82 rows=6182 width=31) (actual time=0.015..11.794 rows=5288 loops=2)
+              Filter: ((order_date >= '2026-01-01 00:00:00'::timestamp without time zone) AND (order_date < '2027-01-01 00:00:00'::timestamp without time zone) AND ((order_status)::text = 'DELIVERED'::text))
+              Rows Removed by Filter: 94712
+              Buffers: shared hit=1809
+Planning Time: 0.112 ms
+Execution Time: 22.742 ms

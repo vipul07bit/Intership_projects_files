@@ -1,0 +1,654 @@
+{
+ "version": "PostgreSQL 16.15 (Ubuntu 16.15-0ubuntu0.24.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit",
+ "shared_buffers": "128MB",
+ "work_mem": "4MB",
+ "parallel_workers": "2",
+ "runs": 5,
+ "experiments": [
+  {
+   "id": "B1",
+   "scenario": "Customer order history",
+   "technique": "Composite covering index (customer_id, order_date DESC) INCLUDE (...)",
+   "before_key": "B1",
+   "after_key": "B1",
+   "before_ms": 11.073,
+   "after_ms": 0.014,
+   "saved_ms": 11.059,
+   "improvement_pct": 99.9,
+   "before_runs": [
+    13.437,
+    11.073,
+    10.855,
+    10.742,
+    16.757
+   ],
+   "after_runs": [
+    0.012,
+    0.014,
+    0.013,
+    0.02,
+    0.036
+   ],
+   "before_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Gather Merge",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "idx_orders_customer_date",
+     "orders"
+    ]
+   ],
+   "rows_before": 4,
+   "rows_after": 4,
+   "same_result": true,
+   "before_hit": 1845,
+   "after_hit": 7,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B2",
+   "scenario": "Product category browsing",
+   "technique": "Composite index (category, is_active, product_name)",
+   "before_key": "B2",
+   "after_key": "B2",
+   "before_ms": 1.178,
+   "after_ms": 0.065,
+   "saved_ms": 1.113,
+   "improvement_pct": 94.5,
+   "before_runs": [
+    1.178,
+    1.142,
+    1.188,
+    1.222,
+    1.119
+   ],
+   "after_runs": [
+    0.086,
+    0.053,
+    0.065,
+    0.055,
+    0.067
+   ],
+   "before_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "products"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "idx_products_category_active_name",
+     "products"
+    ]
+   ],
+   "rows_before": 100,
+   "rows_after": 100,
+   "same_result": true,
+   "before_hit": 96,
+   "after_hit": 28,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B3",
+   "scenario": "Delivered sales, one year",
+   "technique": "Composite covering index (order_status, order_date DESC) INCLUDE (...)",
+   "before_key": "B3",
+   "after_key": "B3",
+   "before_ms": 20.864,
+   "after_ms": 14.429,
+   "saved_ms": 6.435,
+   "improvement_pct": 30.8,
+   "before_runs": [
+    23.732,
+    20.332,
+    20.22,
+    20.864,
+    21.339
+   ],
+   "after_runs": [
+    11.521,
+    11.619,
+    14.761,
+    14.65,
+    14.429
+   ],
+   "before_nodes": [
+    [
+     "Gather Merge",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Bitmap Heap Scan",
+     null,
+     "orders"
+    ],
+    [
+     "Bitmap Index Scan",
+     "idx_orders_status_date",
+     null
+    ]
+   ],
+   "rows_before": 10577,
+   "rows_after": 10577,
+   "same_result": true,
+   "before_hit": 1845,
+   "after_hit": 1891,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B4",
+   "scenario": "Customer-order join (service lookup)",
+   "technique": "Composite covering index on orders + PK lookup on customers",
+   "before_key": "B4",
+   "after_key": "B4",
+   "before_ms": 11.856,
+   "after_ms": 0.051,
+   "saved_ms": 11.805,
+   "improvement_pct": 99.6,
+   "before_runs": [
+    12.332,
+    11.414,
+    11.328,
+    11.856,
+    12.481
+   ],
+   "after_runs": [
+    0.06,
+    0.06,
+    0.041,
+    0.051,
+    0.044
+   ],
+   "before_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Gather Merge",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Nested Loop",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ],
+    [
+     "Index Scan",
+     "customers_pkey",
+     "customers"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Nested Loop",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "idx_orders_customer_date",
+     "orders"
+    ],
+    [
+     "Materialize",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "customers_pkey",
+     "customers"
+    ]
+   ],
+   "rows_before": 4,
+   "rows_after": 4,
+   "same_result": true,
+   "before_hit": 1832,
+   "after_hit": 10,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B5",
+   "scenario": "Low-stock inventory",
+   "technique": "Partial index WHERE quantity_on_hand <= reorder_level",
+   "before_key": "B5",
+   "after_key": "B5",
+   "before_ms": 2.424,
+   "after_ms": 3.101,
+   "saved_ms": -0.677,
+   "improvement_pct": -27.9,
+   "before_runs": [
+    2.422,
+    2.424,
+    2.605,
+    2.497,
+    2.342
+   ],
+   "after_runs": [
+    3.101,
+    2.898,
+    10.508,
+    2.524,
+    3.534
+   ],
+   "before_nodes": [
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Hash Join",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "products"
+    ],
+    [
+     "Hash",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "inventory"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Hash Join",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "products"
+    ],
+    [
+     "Hash",
+     null,
+     null
+    ],
+    [
+     "Bitmap Heap Scan",
+     null,
+     "inventory"
+    ],
+    [
+     "Bitmap Index Scan",
+     "idx_inventory_low_stock",
+     null
+    ]
+   ],
+   "rows_before": 840,
+   "rows_after": 840,
+   "same_result": true,
+   "before_hit": 160,
+   "after_hit": 165,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B6",
+   "scenario": "Year filter 2026",
+   "technique": "Sargable half-open date range (no index change)",
+   "before_key": "B6_before",
+   "after_key": "B6_after",
+   "before_ms": 24.199,
+   "after_ms": 22.84,
+   "saved_ms": 1.359,
+   "improvement_pct": 5.6,
+   "before_runs": [
+    23.394,
+    22.627,
+    26.192,
+    24.818,
+    24.199
+   ],
+   "after_runs": [
+    17.02,
+    17.911,
+    22.84,
+    25.608,
+    27.076
+   ],
+   "before_nodes": [
+    [
+     "Gather",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "rows_before": 53710,
+   "rows_after": 53710,
+   "same_result": true,
+   "before_hit": 1809,
+   "after_hit": 1809,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B7",
+   "scenario": "Monthly delivered revenue 2026",
+   "technique": "Composite covering index (order_status, order_date DESC) INCLUDE (...)",
+   "before_key": "B7",
+   "after_key": "B7",
+   "before_ms": 20.462,
+   "after_ms": 6.742,
+   "saved_ms": 13.72,
+   "improvement_pct": 67.1,
+   "before_runs": [
+    22.702,
+    19.272,
+    20.241,
+    20.462,
+    21.385
+   ],
+   "after_runs": [
+    8.6,
+    7.793,
+    6.714,
+    6.742,
+    6.088
+   ],
+   "before_nodes": [
+    [
+     "Aggregate",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Aggregate",
+     null,
+     null
+    ],
+    [
+     "Sort",
+     null,
+     null
+    ],
+    [
+     "Index Only Scan",
+     "idx_orders_status_date",
+     "orders"
+    ]
+   ],
+   "rows_before": 9,
+   "rows_after": 9,
+   "same_result": true,
+   "before_hit": 1809,
+   "after_hit": 85,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B8",
+   "scenario": "Order history projection",
+   "technique": "Narrow column list instead of SELECT * (indexed state)",
+   "before_key": "B8_before",
+   "after_key": "B8_after",
+   "before_ms": 0.028,
+   "after_ms": 0.009,
+   "saved_ms": 0.019,
+   "improvement_pct": 67.9,
+   "before_runs": [
+    0.024,
+    0.033,
+    0.028,
+    0.029,
+    0.025
+   ],
+   "after_runs": [
+    0.013,
+    0.011,
+    0.009,
+    0.008,
+    0.008
+   ],
+   "before_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "idx_orders_customer_date",
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Limit",
+     null,
+     null
+    ],
+    [
+     "Index Scan",
+     "idx_orders_customer_date",
+     "orders"
+    ]
+   ],
+   "rows_before": 4,
+   "rows_after": 4,
+   "same_result": false,
+   "before_hit": 7,
+   "after_hit": 7,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B9",
+   "scenario": "Date-range report 2026: partitioned vs plain",
+   "technique": "Range partitioning by order_date (vs orders with 05 indexes only)",
+   "before_key": "P_base",
+   "after_key": "P_part",
+   "before_ms": 25.401,
+   "after_ms": 12.603,
+   "saved_ms": 12.798,
+   "improvement_pct": 50.4,
+   "before_runs": [
+    33.441,
+    25.401,
+    20.684,
+    18.359,
+    25.481
+   ],
+   "after_runs": [
+    12.603,
+    12.493,
+    12.35,
+    12.827,
+    14.019
+   ],
+   "before_nodes": [
+    [
+     "Seq Scan",
+     null,
+     "orders"
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Seq Scan",
+     null,
+     "orders_p_2026"
+    ]
+   ],
+   "rows_before": 53710,
+   "rows_after": 53710,
+   "same_result": true,
+   "before_hit": 1809,
+   "after_hit": 486,
+   "before_read": 0,
+   "after_read": 0
+  },
+  {
+   "id": "B10",
+   "scenario": "Date-range report 2026: partitioned vs plain + order_date index",
+   "technique": "Range partitioning (vs orders with a matching order_date index)",
+   "before_key": "P_base",
+   "after_key": "P_part",
+   "before_ms": 20.335,
+   "after_ms": 12.603,
+   "saved_ms": 7.732,
+   "improvement_pct": 38.0,
+   "before_runs": [
+    15.54,
+    17.695,
+    20.335,
+    22.444,
+    21.126
+   ],
+   "after_runs": [
+    12.603,
+    12.493,
+    12.35,
+    12.827,
+    14.019
+   ],
+   "before_nodes": [
+    [
+     "Bitmap Heap Scan",
+     null,
+     "orders"
+    ],
+    [
+     "Bitmap Index Scan",
+     "idx_orders_order_date_ctrl",
+     null
+    ]
+   ],
+   "after_nodes": [
+    [
+     "Seq Scan",
+     null,
+     "orders_p_2026"
+    ]
+   ],
+   "rows_before": 53710,
+   "rows_after": 53710,
+   "same_result": true,
+   "before_hit": 1958,
+   "after_hit": 486,
+   "before_read": 0,
+   "after_read": 0
+  }
+ ]
+}

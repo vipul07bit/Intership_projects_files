@@ -1,0 +1,8 @@
+-- B8 before
+Limit  (cost=0.42..20.08 rows=4 width=40) (actual time=0.004..0.006 rows=4 loops=1)
+  Buffers: shared hit=7
+  ->  Index Scan using idx_orders_customer_date on orders  (cost=0.42..20.08 rows=4 width=40) (actual time=0.004..0.005 rows=4 loops=1)
+        Index Cond: (customer_id = 12345)
+        Buffers: shared hit=7
+Planning Time: 0.030 ms
+Execution Time: 0.012 ms
