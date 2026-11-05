@@ -1,0 +1,7 @@
+## 05 Repeat Customer Rate
+
+Rows returned: **1**
+
+| total_customers | repeat_customers | repeat_customer_pct | avg_delivered_orders_per_customer |
+|---|---|---|---|
+| 300 | 293 | 97.67 | 5.68 |

@@ -1,0 +1,12 @@
+table,row_count
+customers,300
+categories,5
+products,40
+suppliers,8
+product_suppliers,40
+warehouses,3
+inventory,120
+orders,2400
+order_items,4730
+payments,2400
+shipments,1906

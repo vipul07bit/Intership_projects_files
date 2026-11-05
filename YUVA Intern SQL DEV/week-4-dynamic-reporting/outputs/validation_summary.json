@@ -1,0 +1,27 @@
+{
+  "engine": "SQLite verification mirror",
+  "dataset_seed": 20261105,
+  "table_row_counts": {
+    "customers": 300,
+    "categories": 5,
+    "products": 40,
+    "suppliers": 8,
+    "product_suppliers": 40,
+    "warehouses": 3,
+    "inventory": 120,
+    "orders": 2400,
+    "order_items": 4730,
+    "payments": 2400,
+    "shipments": 1906
+  },
+  "checks": {
+    "orders_have_customer": true,
+    "order_items_have_order": true,
+    "order_items_have_product": true,
+    "positive_quantities": true,
+    "nonnegative_inventory": true,
+    "delivered_sales_positive": true
+  },
+  "all_checks_passed": true,
+  "warning": "Reporting SQL files target PostgreSQL. Query logic was executed against a SQLite mirror because a PostgreSQL server was not available in this build environment."
+}

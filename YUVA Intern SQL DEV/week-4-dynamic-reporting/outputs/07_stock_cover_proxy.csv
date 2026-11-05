@@ -1,0 +1,121 @@
+sku,product_name,warehouse_name,quantity_on_hand,units_sold_90d,avg_daily_units,estimated_stock_cover_days
+SKU-0026,Electronics Product 26,Mumbai Central,2,33,0.367,5.5
+SKU-0006,Electronics Product 06,Bengaluru South,4,41,0.456,8.8
+SKU-0017,Home Office Product 17,Mumbai Central,5,50,0.556,9.0
+SKU-0035,Fitness Product 35,Mumbai Central,4,36,0.4,10.0
+SKU-0016,Electronics Product 16,Pune West,5,42,0.467,10.7
+SKU-0033,Accessories Product 33,Bengaluru South,6,43,0.478,12.6
+SKU-0034,Home & Kitchen Product 34,Pune West,6,41,0.456,13.2
+SKU-0034,Home & Kitchen Product 34,Mumbai Central,7,41,0.456,15.4
+SKU-0030,Fitness Product 30,Bengaluru South,7,36,0.4,17.5
+SKU-0040,Fitness Product 40,Pune West,11,49,0.544,20.2
+SKU-0022,Home Office Product 22,Pune West,7,28,0.311,22.5
+SKU-0024,Home & Kitchen Product 24,Bengaluru South,11,41,0.456,24.1
+SKU-0025,Fitness Product 25,Pune West,8,28,0.311,25.7
+SKU-0016,Electronics Product 16,Mumbai Central,13,42,0.467,27.9
+SKU-0018,Accessories Product 18,Pune West,14,45,0.5,28.0
+SKU-0027,Home Office Product 27,Bengaluru South,15,39,0.433,34.6
+SKU-0031,Electronics Product 31,Pune West,20,50,0.556,36.0
+SKU-0002,Home Office Product 02,Bengaluru South,15,36,0.4,37.5
+SKU-0004,Home & Kitchen Product 04,Pune West,25,59,0.656,38.1
+SKU-0001,Electronics Product 01,Mumbai Central,24,56,0.622,38.6
+SKU-0038,Accessories Product 38,Pune West,23,53,0.589,39.1
+SKU-0019,Home & Kitchen Product 19,Mumbai Central,17,39,0.433,39.2
+SKU-0014,Home & Kitchen Product 14,Pune West,27,61,0.678,39.8
+SKU-0007,Home Office Product 07,Pune West,16,36,0.4,40.0
+SKU-0008,Accessories Product 08,Mumbai Central,15,33,0.367,40.9
+SKU-0011,Electronics Product 11,Mumbai Central,27,58,0.644,41.9
+SKU-0040,Fitness Product 40,Mumbai Central,23,49,0.544,42.2
+SKU-0014,Home & Kitchen Product 14,Mumbai Central,29,61,0.678,42.8
+SKU-0020,Fitness Product 20,Bengaluru South,19,40,0.444,42.8
+SKU-0008,Accessories Product 08,Bengaluru South,16,33,0.367,43.6
+SKU-0012,Home Office Product 12,Mumbai Central,20,40,0.444,45.0
+SKU-0010,Fitness Product 10,Bengaluru South,18,35,0.389,46.3
+SKU-0016,Electronics Product 16,Bengaluru South,22,42,0.467,47.1
+SKU-0023,Accessories Product 23,Bengaluru South,21,38,0.422,49.7
+SKU-0011,Electronics Product 11,Pune West,33,58,0.644,51.2
+SKU-0029,Home & Kitchen Product 29,Mumbai Central,28,47,0.522,53.6
+SKU-0038,Accessories Product 38,Mumbai Central,32,53,0.589,54.3
+SKU-0028,Accessories Product 28,Pune West,14,23,0.256,54.8
+SKU-0031,Electronics Product 31,Mumbai Central,31,50,0.556,55.8
+SKU-0015,Fitness Product 15,Bengaluru South,19,29,0.322,59.0
+SKU-0028,Accessories Product 28,Mumbai Central,16,23,0.256,62.6
+SKU-0010,Fitness Product 10,Pune West,26,35,0.389,66.9
+SKU-0006,Electronics Product 06,Pune West,31,41,0.456,68.0
+SKU-0009,Home & Kitchen Product 09,Pune West,34,45,0.5,68.0
+SKU-0031,Electronics Product 31,Bengaluru South,38,50,0.556,68.4
+SKU-0013,Accessories Product 13,Mumbai Central,33,43,0.478,69.1
+SKU-0012,Home Office Product 12,Pune West,31,40,0.444,69.8
+SKU-0024,Home & Kitchen Product 24,Mumbai Central,32,41,0.456,70.2
+SKU-0019,Home & Kitchen Product 19,Pune West,31,39,0.433,71.5
+SKU-0037,Home Office Product 37,Pune West,35,44,0.489,71.6
+SKU-0010,Fitness Product 10,Mumbai Central,29,35,0.389,74.6
+SKU-0004,Home & Kitchen Product 04,Mumbai Central,49,59,0.656,74.7
+SKU-0027,Home Office Product 27,Pune West,34,39,0.433,78.5
+SKU-0037,Home Office Product 37,Bengaluru South,39,44,0.489,79.8
+SKU-0036,Electronics Product 36,Bengaluru South,27,29,0.322,83.8
+SKU-0018,Accessories Product 18,Mumbai Central,42,45,0.5,84.0
+SKU-0039,Home & Kitchen Product 39,Mumbai Central,36,38,0.422,85.3
+SKU-0027,Home Office Product 27,Mumbai Central,38,39,0.433,87.7
+SKU-0009,Home & Kitchen Product 09,Bengaluru South,44,45,0.5,88.0
+SKU-0001,Electronics Product 01,Bengaluru South,55,56,0.622,88.4
+SKU-0001,Electronics Product 01,Pune West,56,56,0.622,90.0
+SKU-0003,Accessories Product 03,Mumbai Central,41,41,0.456,90.0
+SKU-0017,Home Office Product 17,Pune West,52,50,0.556,93.6
+SKU-0021,Electronics Product 21,Bengaluru South,48,46,0.511,93.9
+SKU-0003,Accessories Product 03,Pune West,43,41,0.456,94.4
+SKU-0002,Home Office Product 02,Mumbai Central,38,36,0.4,95.0
+SKU-0021,Electronics Product 21,Pune West,49,46,0.511,95.9
+SKU-0005,Fitness Product 05,Pune West,40,37,0.411,97.3
+SKU-0007,Home Office Product 07,Bengaluru South,39,36,0.4,97.5
+SKU-0035,Fitness Product 35,Bengaluru South,39,36,0.4,97.5
+SKU-0013,Accessories Product 13,Bengaluru South,47,43,0.478,98.4
+SKU-0040,Fitness Product 40,Bengaluru South,55,49,0.544,101.0
+SKU-0014,Home & Kitchen Product 14,Bengaluru South,70,61,0.678,103.3
+SKU-0004,Home & Kitchen Product 04,Bengaluru South,68,59,0.656,103.7
+SKU-0021,Electronics Product 21,Mumbai Central,53,46,0.511,103.7
+SKU-0018,Accessories Product 18,Bengaluru South,52,45,0.5,104.0
+SKU-0023,Accessories Product 23,Pune West,44,38,0.422,104.2
+SKU-0039,Home & Kitchen Product 39,Pune West,44,38,0.422,104.2
+SKU-0013,Accessories Product 13,Pune West,51,43,0.478,106.7
+SKU-0039,Home & Kitchen Product 39,Bengaluru South,46,38,0.422,108.9
+SKU-0032,Home Office Product 32,Bengaluru South,28,23,0.256,109.6
+SKU-0011,Electronics Product 11,Bengaluru South,71,58,0.644,110.2
+SKU-0036,Electronics Product 36,Mumbai Central,36,29,0.322,111.7
+SKU-0024,Home & Kitchen Product 24,Pune West,51,41,0.456,112.0
+SKU-0030,Fitness Product 30,Mumbai Central,45,36,0.4,112.5
+SKU-0035,Fitness Product 35,Pune West,45,36,0.4,112.5
+SKU-0003,Accessories Product 03,Bengaluru South,52,41,0.456,114.1
+SKU-0032,Home Office Product 32,Mumbai Central,30,23,0.256,117.4
+SKU-0038,Accessories Product 38,Bengaluru South,70,53,0.589,118.9
+SKU-0029,Home & Kitchen Product 29,Bengaluru South,63,47,0.522,120.6
+SKU-0022,Home Office Product 22,Mumbai Central,38,28,0.311,122.1
+SKU-0036,Electronics Product 36,Pune West,40,29,0.322,124.1
+SKU-0005,Fitness Product 05,Mumbai Central,54,37,0.411,131.4
+SKU-0017,Home Office Product 17,Bengaluru South,74,50,0.556,133.2
+SKU-0033,Accessories Product 33,Mumbai Central,64,43,0.478,134.0
+SKU-0012,Home Office Product 12,Bengaluru South,62,40,0.444,139.5
+SKU-0033,Accessories Product 33,Pune West,67,43,0.478,140.2
+SKU-0023,Accessories Product 23,Mumbai Central,60,38,0.422,142.1
+SKU-0022,Home Office Product 22,Bengaluru South,45,28,0.311,144.6
+SKU-0020,Fitness Product 20,Pune West,66,40,0.444,148.5
+SKU-0029,Home & Kitchen Product 29,Pune West,78,47,0.522,149.4
+SKU-0009,Home & Kitchen Product 09,Mumbai Central,75,45,0.5,150.0
+SKU-0026,Electronics Product 26,Pune West,55,33,0.367,150.0
+SKU-0037,Home Office Product 37,Mumbai Central,75,44,0.489,153.4
+SKU-0028,Accessories Product 28,Bengaluru South,42,23,0.256,164.3
+SKU-0005,Fitness Product 05,Bengaluru South,68,37,0.411,165.4
+SKU-0020,Fitness Product 20,Mumbai Central,74,40,0.444,166.5
+SKU-0006,Electronics Product 06,Mumbai Central,77,41,0.456,169.0
+SKU-0034,Home & Kitchen Product 34,Bengaluru South,78,41,0.456,171.2
+SKU-0002,Home Office Product 02,Pune West,69,36,0.4,172.5
+SKU-0015,Fitness Product 15,Pune West,56,29,0.322,173.8
+SKU-0019,Home & Kitchen Product 19,Bengaluru South,77,39,0.433,177.7
+SKU-0015,Fitness Product 15,Mumbai Central,58,29,0.322,180.0
+SKU-0025,Fitness Product 25,Mumbai Central,58,28,0.311,186.4
+SKU-0026,Electronics Product 26,Bengaluru South,70,33,0.367,190.9
+SKU-0007,Home Office Product 07,Mumbai Central,78,36,0.4,195.0
+SKU-0030,Fitness Product 30,Pune West,78,36,0.4,195.0
+SKU-0008,Accessories Product 08,Pune West,73,33,0.367,199.1
+SKU-0025,Fitness Product 25,Bengaluru South,67,28,0.311,215.4
+SKU-0032,Home Office Product 32,Pune West,68,23,0.256,266.1

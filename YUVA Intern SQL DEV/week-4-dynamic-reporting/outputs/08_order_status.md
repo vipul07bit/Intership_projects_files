@@ -1,0 +1,12 @@
+## 08 Order Status
+
+Rows returned: **6**
+
+| order_status | order_count | merchandise_value | order_share_pct |
+|---|---|---|---|
+| delivered | 1704 | 46841619.84 | 71.0 |
+| shipped | 202 | 5754363.35 | 8.42 |
+| processing | 157 | 3679126.04 | 6.54 |
+| confirmed | 128 | 2663024.52 | 5.33 |
+| cancelled | 124 | 2827366.3 | 5.17 |
+| refunded | 85 | 2360033.89 | 3.54 |

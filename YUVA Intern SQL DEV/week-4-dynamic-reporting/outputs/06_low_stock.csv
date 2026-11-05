@@ -1,0 +1,26 @@
+warehouse_name,sku,product_name,quantity_on_hand,reorder_level,units_below_reorder
+Pune West,SKU-0025,Fitness Product 25,8,24,16
+Bengaluru South,SKU-0006,Electronics Product 06,4,18,14
+Pune West,SKU-0040,Fitness Product 40,11,25,14
+Bengaluru South,SKU-0030,Fitness Product 30,7,19,12
+Mumbai Central,SKU-0019,Home & Kitchen Product 19,17,25,8
+Bengaluru South,SKU-0024,Home & Kitchen Product 24,11,18,7
+Mumbai Central,SKU-0016,Electronics Product 16,13,20,7
+Mumbai Central,SKU-0026,Electronics Product 26,2,9,7
+Mumbai Central,SKU-0028,Accessories Product 28,16,22,6
+Pune West,SKU-0016,Electronics Product 16,5,11,6
+Pune West,SKU-0007,Home Office Product 07,16,22,6
+Bengaluru South,SKU-0008,Accessories Product 08,16,21,5
+Mumbai Central,SKU-0017,Home Office Product 17,5,10,5
+Pune West,SKU-0022,Home Office Product 22,7,12,5
+Bengaluru South,SKU-0023,Accessories Product 23,21,25,4
+Mumbai Central,SKU-0035,Fitness Product 35,4,8,4
+Mumbai Central,SKU-0034,Home & Kitchen Product 34,7,11,4
+Pune West,SKU-0034,Home & Kitchen Product 34,6,10,4
+Mumbai Central,SKU-0008,Accessories Product 08,15,18,3
+Pune West,SKU-0018,Accessories Product 18,14,17,3
+Pune West,SKU-0028,Accessories Product 28,14,17,3
+Bengaluru South,SKU-0033,Accessories Product 33,6,8,2
+Bengaluru South,SKU-0015,Fitness Product 15,19,21,2
+Pune West,SKU-0031,Electronics Product 31,20,22,2
+Bengaluru South,SKU-0010,Fitness Product 10,18,18,0
