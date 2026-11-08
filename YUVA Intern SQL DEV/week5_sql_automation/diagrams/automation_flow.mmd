@@ -1,0 +1,16 @@
+flowchart TD
+ A[Customer checkout] --> B[sp_process_sale]
+ B --> C{Valid customer, product and quantity?}
+ C -- No --> X[Raise error; statement rolls back]
+ C -- Yes --> D[Lock inventory row FOR UPDATE]
+ D --> E{Available stock sufficient?}
+ E -- No --> X
+ E -- Yes --> F[Insert order and order item]
+ F --> G[Deduct inventory]
+ G --> H[AFTER UPDATE trigger]
+ H --> I[Write inventory movement]
+ H --> J{Stock <= reorder level?}
+ J -- Yes --> K[Upsert one OPEN low-stock alert]
+ J -- No --> L[Resolve existing alert]
+ M[Daily / monthly scheduler] --> N[Snapshot inventory / archive old orders]
+ N --> O[Write automation_log]
